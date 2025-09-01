@@ -1,0 +1,35 @@
+{
+  "name": "dircreate",
+  "version": "1.0.0",
+  "description": "This is a CLI tool that helps you create projects quickly and easily.",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "project",
+    "create",
+    "directory",
+    "dircreate",
+    "create-project",
+    "create-project-cli"
+  ],
+  "author": "Thibaut Kouamé",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thibautkouame/dircreate"
+  },
+  "homepage": "https://github.com/thibaut-kouame/dircreate",
+  "license": "ISC",
+  "type": "module",
+  "bin": {
+    "dircreate": "bin/index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.6.0",
+    "clear": "^0.1.0",
+    "execa": "^9.6.0",
+    "inquirer": "^12.9.4"
+  }
+}
