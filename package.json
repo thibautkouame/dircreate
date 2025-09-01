@@ -1,5 +1,5 @@
 {
-  "name": "@thibaut_kouame/dircreate-cli",
+  "name": "allcli",
   "version": "1.0.0",
   "description": "This is a CLI tool that helps you create projects quickly and easily.",
   "main": "bin/index.js",
