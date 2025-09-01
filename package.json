@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/thibautkouame/dircreate"
   },
-  "homepage": "https://github.com/thibaut-kouame/dircreate",
+  "homepage": "https://github.com/thibautkouame/dircreate",
   "license": "ISC",
   "type": "module",
   "bin": {
