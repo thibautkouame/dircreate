@@ -1,5 +1,5 @@
 {
-  "name": "dircreate",
+  "name": "@thibaut_kouame/dircreate-cli",
   "version": "1.0.0",
   "description": "This is a CLI tool that helps you create projects quickly and easily.",
   "main": "bin/index.js",
@@ -18,7 +18,7 @@
   "author": "Thibaut Kouamé",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thibautkouame/dircreate"
+    "url": "git+https://github.com/thibautkouame/dircreate.git"
   },
   "homepage": "https://github.com/thibautkouame/dircreate",
   "license": "ISC",
