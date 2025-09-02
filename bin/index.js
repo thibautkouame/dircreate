@@ -48,7 +48,7 @@ const RECIPES = [
 
 const welcomeMessage = () => {
     clear();
-    console.log(chalk.green.bold('Welcome to DIRCREATE CLI ✨ !\n'));
+    console.log(chalk.green.bold('Welcome to ALLCMDS CLI ✨ !\n'));
     console.log(chalk.cyan('Create projects easily with a single command.\n'));
     // console.log(chalk.yellow('Available options:\n'));
     // RECIPES.forEach((recipe, index) => {

@@ -1,7 +1,7 @@
 {
   "name": "all-cmd",
   "version": "1.0.1",
-  "description": "This is a CLI tool that helps you create projects quickly and easily.",
+  "description": "This command line interface is designed to bring together all the commands needed to quickly and easily create projects. No more searching for the command you need, no more memorization.",
   "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "project",
     "create",
     "directory",
-    "dircreate",
+    "allcmds",
     "create-project",
     "create-project-cli"
   ],
