@@ -1,5 +1,5 @@
 {
-  "name": "allcli",
+  "name": "all-cmd",
   "version": "1.0.0",
   "description": "This is a CLI tool that helps you create projects quickly and easily.",
   "main": "bin/index.js",
@@ -24,7 +24,7 @@
   "license": "ISC",
   "type": "module",
   "bin": {
-    "dircreate": "bin/index.js"
+    "allcmd": "bin/index.js"
   },
   "dependencies": {
     "chalk": "^5.6.0",
