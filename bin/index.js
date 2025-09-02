@@ -4,19 +4,31 @@ import { execa } from 'execa';
 import { existsSync } from 'fs';
 import chalk from 'chalk';
 import clear from 'clear';
+import { VERSION } from '../lib/version.js';
+import { CONSTS } from '../lib/const.js';
 
+// Show version
+if (process.argv.includes(CONSTS.VERSION_TAG) || process.argv.includes(CONSTS.VERSION_SHORT)) {
+    console.log(VERSION);
+    process.exit(0);
+}
+
+// Fail function
 const fail = (msg) => { console.error(chalk.red(msg)); process.exit(1); };
 
+// Quit function
 const quit = () => {
     console.log(chalk.red('\nProcess finished. See you soon!'));
     process.exit(0);
 };
 
+// Ensure command function
 const ensureCmd = async (cmd) => {
     try { await execa(cmd, ['--version'], { stdio: 'ignore' }); return true; }
     catch { return false; }
 };
 
+// Recipes
 const RECIPES = [
     {
         id: 'next',
@@ -46,17 +58,14 @@ const RECIPES = [
     },
 ];
 
+// Welcome message
 const welcomeMessage = () => {
     clear();
     console.log(chalk.green.bold('Welcome to ALLCMDS CLI ✨ !\n'));
     console.log(chalk.cyan('Create projects easily with a single command.\n'));
-    // console.log(chalk.yellow('Available options:\n'));
-    // RECIPES.forEach((recipe, index) => {
-    //     console.log(chalk.cyan(`  ${index + 1}. ${recipe.label}`));
-    // });
-    // console.log(chalk.cyan('  0. Quit\n'));
 };
 
+// Run function
 const run = async () => {
     welcomeMessage();
 
@@ -69,7 +78,7 @@ const run = async () => {
                 choices: [
                     ...RECIPES.map((r, index) => ({ name: `${index + 1}. ${r.label}`, value: r.id })),
                     new inquirer.Separator(),
-                    { name: 'Press Ctrl + C to quit', value: 'quit' }
+                    { name: CONSTS.QUIT_MESSAGE, value: 'quit' }
                 ],
             },
         ]);
@@ -114,7 +123,7 @@ const run = async () => {
         }
 
         const [cmd, args] = recipe.cmd(name, extra);
-        console.log(chalk.cyan(`→ ${cmd} ${args.join(' ')}`));
+        console.log(chalk.cyan(`→ ${cmd} ${args.join(':')}`));
 
         const child = execa(cmd, args, { stdio: 'inherit', shell: process.platform === 'win32' });
         child.on('exit', (code) => process.exit(code ?? 0));
